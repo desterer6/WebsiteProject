@@ -1,0 +1,157 @@
+<html>
+
+<!--StartBody-->
+<body style= "background-color:gray;">
+<title>
+David Esterer's Page
+</title>
+
+<h1 style= "background-color:blue;">
+David Esterer's Page
+</h1>
+
+<h3>
+
+<!--Enter Their Name-->
+<form style = "background-color:LightGray;" >
+	<label for="fname">First name:</label><br>
+	<input type="text" id="fname" name="fname"><br>
+	<label for="lname">Last name:</label><br>
+	<input type="text" id="lname" name="lname">
+	<input type="reset" value="Reset" />
+</form>
+
+</h3>
+
+
+<!--Intro To Quiz-->
+<h2 style = "background-color:white;">
+Are you ready for this quiz? <br>
+This quiz is going to be over Popular Show Yellowstone on PeacockTV <br>
+Here is a link to more information.
+<a href="https://en.wikipedia.org/wiki/Yellowstone_(American_TV_series)" target="_blank">More Info Here</a>
+</h2>
+
+
+<!--Quiz is Beginning-->
+<p style = "background-color:lightGray;">
+
+<!--QUESTION 1-->
+<form style = "background-color:lightGray;">
+	Where is the show Yellowstone located??<br>
+	<input type = "radio" id="montana" name="fav_language" value="Montana" onclick="update1('answer1');">
+	<label for = "montana"> Montana </label><br>
+	
+	<input type = "radio" id="utah" name="fav_language" value="Utah" onclick="update1('answer2');">
+	<label for = "utah"> Utah </label><br>
+	
+	<input type = "radio" id="texas" name="fav_language" value="Texas" onclick="update1('answer3');">
+	<label for = "texas"> Texas </label><br>
+	
+	<div id="answerChoice1"> </div>
+</form>
+
+<!--QUESTION 2-->
+<form style = "background-color:lightGray;">
+	The family in show owns the Largest ranch in the U.S., What's the name?<br>
+	<input type = "radio" id="outback" name="fav_language" value="Outback" onclick="update2('answer2');">
+	<label for = "outback"> The Outback </label><br>
+	
+	<input type = "radio" id="king" name="fav_language" value="King" onclick="update2('answer3');">
+	<label for = "king"> The King Ranch </label><br>
+	
+	<input type = "radio" id="yellow" name="fav_language" value="Yellowstone" onclick="update2('answer1');">
+	<label for = "yellow"> The Yellowstone </label><br>
+	
+	<div id="answerChoice2">  </div>
+</form>
+
+
+<!--QUESTION 3-->
+<form style = "background-color:lightGray;">
+	Who runs/is the owner of the ranch? (Select the photo or bullet)<br>
+	<img src="jamiedutton.jpeg" width="145" height="150" onclick="update3('answer3');">
+	<input type = "radio" id="jamie" name="fav_language" value="Jamie" onclick="update3('answer3');">
+	<label for = "jamie"> Jamie </label><br>
+	
+	<img src="johndutton.jpeg" width="145" height="150" onclick="update3('answer1');">
+	<input type = "radio" id="john" name="fav_language" value="John" onclick="update3('answer1');">
+	<label for = "john"> John </label><br>
+	
+	<img src="rainwater.jpeg" width="145" height="150" onclick="update3('answer2');">
+	<input type = "radio" id="rain" name="fav_language" value="Rain" onclick="update3('answer2');">
+	<label for = "rain"> Thomas </label><br>
+	
+	<div id="answerChoice3">  </div>
+</form>
+
+</p>
+
+
+<script type="text/javascript">
+//look at w3schools
+
+class Answer
+{
+	constructor(answerIn)
+	{
+		this.answer = answerIn;
+		
+	}
+	
+	changeAnswer(answer)
+	{
+		if(answer == "answer1")
+			this.name = "WOW! That is correct!";
+		else if(answer == "answer2")
+			this.name = "Nope. That is beyond wrong.";
+		else if(answer == "answer3")
+			this.name = "Nice try, but do better.";
+		else
+			this.name = "Huh?";
+	}
+	
+	update(tag)
+	{
+		document.getElementById(tag).innerHTML = this.name;
+	
+	}
+
+}
+
+function update1(type)
+{
+	myResponse1.changeAnswer(type);
+	myResponse1.update('answerChoice1');
+	
+}
+
+function update2(type)
+{
+	myResponse2.changeAnswer(type);
+	myResponse2.update('answerChoice2');
+
+}
+
+function update3(type)
+{
+	myResponse3.changeAnswer(type);
+	myResponse3.update('answerChoice3');
+}
+
+let myResponse1 = new Answer("Huh?");
+let myResponse2 = new Answer("Huh?");
+let myResponse3 = new Answer("Huh?");
+
+</script>
+
+<button onClick="window.location.reload();">Reset Page</button>
+
+</body>
+
+
+
+
+
+
+
